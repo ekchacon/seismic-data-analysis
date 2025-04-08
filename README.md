@@ -29,7 +29,7 @@ The dataset used in this project consists of:
 2. **Well Log Data**: Contains acoustic impedance measurements from five borehole logs, which serve as the labeled data for training and validation.
 
 The preprocessing pipeline includes:
-- Extraction of seismic data (M6) around well locations
+- Extraction of seismic data around well locations
 - Normalization and interpolation of seismic and well log data
 - Reduction of samples in traces to optimize processing
 - Windowing of data per CDP for effective training
