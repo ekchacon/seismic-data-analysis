@@ -1,5 +1,8 @@
 # Seismic Data Analysis
 
+<img width="992" alt="image" src="https://github.com/user-attachments/assets/1f737005-7e09-44e2-a78d-f42264957da7" />
+
+
 ## Table of Contents
 - [Overview](#overview)
 - [Dataset](#dataset)
@@ -16,7 +19,7 @@
 
 This project implements a deep semi-supervised learning (DSSL) approach for seismic data analysis, specifically focused on estimating acoustic impedance using pre-stack seismic data. The project addresses a critical challenge in reservoir characterization: the scarcity of labeled data despite the abundance of unlabeled seismic data.
 
-Seismic data preparation is an exceptionally complex and challenging process that involves sophisticated techniques for squeezing and stretching the data. This preprocessing is crucial for aligning seismic traces with well log data and ensuring accurate analysis. The project handles these complexities through specialized functions that normalize, interpolate, and transform raw seismic data into formats suitable for deep learning models.
+Seismic data preparation is an exceptionally complex and challenging process that involves sophisticated techniques for squeezing and stretching the data. This preprocessing is crucial for aligning seismic traces with well log data and ensuring accurate analysis. In adition to this challegenging data preparation, the project handles other pre-processing functions that normalize, interpolate, and transform raw seismic data into formats suitable for deep learning models.
 
 The solution leverages recurrent neural networks in a semi-supervised learning framework to improve the performance of supervised learning by utilizing large amounts of unlabeled data. This approach has proven particularly effective in domains where labeled data is expensive or difficult to obtain, such as oil exploration and reservoir characterization.
 
@@ -103,21 +106,21 @@ The project implements a two-stage semi-supervised learning approach:
 
 ```python
 # Run pre-training on unlabeled data
-python training/semi-supervised/pre-training/pre-training_on_server_1.py --config configs/pretraining.yaml
+python training/semi-supervised/pre-training/pre-training_on_server_1.py
 ```
 
-This stage uses unlabeled data to train LSTM autoencoders in a greedy layer-wise fashion, helping the model learn meaningful representations from the abundant unlabeled seismic data.
+This stage uses unlabeled data to train LSTM autoencoders in a greedy layer-wise fashion, helping the model learn meaningful representations from the abundant unlabeled seismic data. Pre-training was performed using two GPUs to enable parallel computation and reduce training duration.
 
 ### 2. Fine-tuning Stage
 
 ```python
 # Fine-tune the pre-trained model with labeled data
-python training/semi-supervised/fine_tuning/fine_tuning.py --config configs/finetuning.yaml
+python training/semi-supervised/fine_tuning/fine_tuning.py
 ```
 
 This stage uses the limited labeled data to fine-tune the pre-trained model for the specific task of acoustic impedance estimation.
 
-Training configurations can be adjusted in the respective YAML files. The training process typically takes several hours on a GPU-enabled machine, with the pre-training stage being the most computationally intensive.
+The training process typically takes several minutes on a GPU-enabled machine, with the pre-training stage being the most computationally intensive.
 
 ## Results
 
