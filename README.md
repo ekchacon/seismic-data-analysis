@@ -12,7 +12,6 @@
 - [Results](#results)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact/Acknowledgments](#contactacknowledgments)
 
 ## Overview
@@ -124,13 +123,16 @@ The training process typically takes several minutes on a GPU-enabled machine, w
 
 ## Results
 
-The deep semi-supervised learning approach demonstrates superior performance compared to purely supervised methods when working with limited labeled data:
+The deep semi-supervised learning approach demonstrates superior performance compared to purely supervised methods when working with limited labeled data as the figure shows below:
 
-- **Improved Accuracy**: The DSSL model achieves better acoustic impedance estimation both at well locations and outside them.
+- **Improved Accuracy**: The DSSL model achieves better acoustic impedance estimation both at well locations and outside them (gray arrows).
 - **Better Generalization**: The model shows enhanced ability to generalize to unseen data.
 - **Reduced Data Requirements**: Achieves good performance with significantly less labeled data than traditional supervised approaches.
 
 The results validate that employing large amounts of unlabeled data can significantly improve seismic data interpretation systems, particularly in scenarios where labeled data is scarce or expensive to obtain.
+
+<img width="931" alt="image" src="https://github.com/user-attachments/assets/0d7f328b-4e39-48ae-bf5e-b7c31b0ab18c" />
+
 
 ## Project Structure
 
@@ -166,10 +168,6 @@ Contributions to this project are welcome. To contribute:
 
 Please ensure your code follows the project's coding style and includes appropriate tests.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Contact/Acknowledgments
 
 This project was developed by Edgar Ek-Chacón, Erik Molino-Minero-Re, Paul Erick Méndez-Monroy, Antonio Neme, and Hector Ángeles-Hernández as part of research at the Universidad Nacional Autónoma de México (UNAM).
@@ -178,4 +176,4 @@ For questions or collaborations, please contact:
 - Edgar Ek-Chacón: ekchacon89@gmail.com
 - Erik Molino-Minero-Re: erik.molino@iimas.unam.mx
 
-The research was published in Applied Sciences journal under the title "Semi-Supervised Training for (Pre-Stack) Seismic Data Analysis."
+The research was published in Applied Sciences journal under the title ["Semi-Supervised Training for (Pre-Stack) Seismic Data Analysis."](https://www.mdpi.com/2076-3417/14/10/4175)
