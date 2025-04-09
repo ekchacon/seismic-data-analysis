@@ -24,7 +24,7 @@ session = InteractiveSession(config=config)
 # Multi-worker setup for distributed training
 os.environ['TF_CONFIG'] = json.dumps({
     'cluster': {
-        'worker': ['132.247.46.91:20100', '132.247.46.17:20102'] # Worker IPs and ports
+        'worker': ['192.0.0.1:xxxx', '192.0.0.2:xxxx'] # Worker IPs and ports
     },
     'task': {'type': 'worker', 'index': 1}  # Chief worker (index 0)
 })
